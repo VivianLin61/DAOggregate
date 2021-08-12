@@ -1,0 +1,144 @@
+:root {
+  font-size: 16px;
+  font-family: 'Open Sans';
+  --text-primary: white;
+  --text-secondary: #ececec;
+
+  --transition-speed: 650ms;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin-left: 5rem;
+  padding: 1rem;
+}
+
+.navbar {
+  position: fixed;
+  background-color: var(--bg-primary);
+  z-index: 1;
+  .nav-link {
+    svg {
+      font-size: 50px;
+      width: 2rem;
+      height: 2rem;
+      margin: 0 0.5rem;
+    }
+  }
+}
+
+*,
+::after,
+::before {
+  box-sizing: unset;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+
+  svg {
+    font-size: 100px;
+    margin: 0 1rem;
+  }
+}
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 0.3em 1.5rem !important;
+  padding-right: 5rem !important;
+  border-radius: 10px;
+}
+
+.nav-link:hover {
+  color: white;
+  background-color: var(--bg-secondary);
+}
+.nav-link svg {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.logo {
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 4rem;
+    .nav-item:first-child {
+      display: none;
+    }
+    .nav-item:nth-child(2) {
+      display: none;
+    }
+  }
+  .navbar .link-text {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .logo {
+    display: none;
+  }
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    height: 100vh;
+  }
+
+  .navbar .link-text {
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    opacity: 1;
+  }
+
+  .link-text {
+    font-size: 20px;
+    padding-left: 1rem;
+  }
+}

@@ -1,0 +1,41 @@
+:root {
+  --main-color: #1e1f36;
+  --secondary-color: #282828;
+  --text-muted: #6c757d;
+  --bg-primary: hsl(238, 29%, 16%);
+  --bg-secondary: #222339;
+  --border: #31324b;
+}
+
+@import './sideBar.scss';
+@import './searchBar.scss';
+body {
+  background-color: var(--bg-primary);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+.menu-container {
+  margin-left: 234px;
+  padding-top: 25px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.app-container {
+  margin-left: 280px;
+  margin-top: 35px;
+  margin-right: 50px;
+  border-radius: 20px;
+  padding: 30px 20px 30px 20px;
+  background-color: var(--bg-secondary);
+  border-color: var(--border);
+  color: white;
+}
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .menu-container {
+    margin-left: 10px;
+  }
+  .app-container {
+    margin-left: 10px;
+  }
+}
