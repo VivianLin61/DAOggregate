@@ -1,13 +1,14 @@
 :root {
-  --main-color: #1e1f36;
+  --main-color: #5846c3;
   --secondary-color: #282828;
-  --text-muted: #6c757d;
+  --text-muted: #616578;
   --bg-primary: hsl(238, 29%, 16%);
   --bg-secondary: #222339;
   --border: #31324b;
 }
-
+@import './home.scss';
 @import './sideBar.scss';
+@import './dao.scss';
 @import './searchBar.scss';
 body {
   background-color: var(--bg-primary);
@@ -25,7 +26,7 @@ body {
   margin-top: 35px;
   margin-right: 50px;
   border-radius: 20px;
-  padding: 30px 20px 30px 20px;
+  padding: 30px 40px 30px 40px;
   background-color: var(--bg-secondary);
   border-color: var(--border);
   color: white;
