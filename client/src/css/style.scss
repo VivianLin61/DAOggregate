@@ -10,10 +10,16 @@
 @import './sideBar.scss';
 @import './dao.scss';
 @import './searchBar.scss';
+@import './add.scss';
 body {
   background-color: var(--bg-primary);
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+}
+h1 {
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 .menu-container {
   margin-left: 234px;

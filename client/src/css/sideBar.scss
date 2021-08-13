@@ -1,9 +1,6 @@
 :root {
   font-size: 16px;
-  font-family: 'Open Sans';
   --text-primary: white;
-  --text-secondary: #ececec;
-  --transition-speed: 650ms;
 }
 
 body {
@@ -21,6 +18,7 @@ main {
   background-color: var(--bg-primary);
   z-index: 1;
   .nav-link {
+    font-weight: bold;
     svg {
       font-size: 50px;
       width: 2rem;

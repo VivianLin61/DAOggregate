@@ -33,12 +33,17 @@
     border-color: var(--border);
   }
   button:hover {
+    background-color: white !important;
+    color: var(--bg-primary) !important;
     background-color: var(--bg-primary);
     border-color: var(--border);
   }
 
   button:active {
-    background-color: var(--bg-primary) !important;
+    background-color: white !important;
+    color: var(--bg-primary) !important;
+    background-color: var(--bg-primary);
+    border-color: var(--border);
     border-color: var(--border) !important;
     box-shadow: none !important;
   }

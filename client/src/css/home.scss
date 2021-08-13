@@ -1,8 +1,4 @@
 .home {
-  h1 {
-    font-weight: bold;
-    margin-bottom: 30px;
-  }
   .summary {
     display: flex;
     justify-content: space-between;
@@ -41,7 +37,6 @@
     border-color: var(--border);
   }
   .dao-header {
-    // color: var(--main-color);
     color: white;
     font-weight: normal;
     font-size: 13px;

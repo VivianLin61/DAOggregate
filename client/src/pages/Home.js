@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Card } from 'react-bootstrap'
-import { daolist as daos } from '../data/daolist.js'
 import DaoCard from '../components/DaoCard.js'
-function Home(props) {
+function Home({ daos, setDaos }) {
   const categories = [
     'All',
     'Protocol',
