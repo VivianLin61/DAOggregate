@@ -3,6 +3,7 @@ import { Form, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 function Search(props) {
   const [search, setSearch] = useState('')
+  console.log(search)
   return (
     <div className='menu-container'>
       <div className='search-container'>

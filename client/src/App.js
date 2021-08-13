@@ -7,7 +7,7 @@ import Dao from '../src/pages/Dao.js'
 import { daolist } from '../src/data/daolist.js'
 import Learn from '../src/pages/Learn.js'
 function App() {
-  const [daos, setDaos] = useState()
+  const [daos, setDaos] = useState(daolist)
 
   useEffect(() => {
     setDaos(daolist)

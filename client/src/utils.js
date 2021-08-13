@@ -24,3 +24,29 @@ export const useForm = (callback, initialState = {}) => {
     values,
   }
 }
+
+export const isInIncreasingOrder = (itemsToTest, sortingCriteria) => {
+  for (let i = 0; i < itemsToTest.length - 1; i++) {
+    if (itemsToTest[i][sortingCriteria] > itemsToTest[i + 1][sortingCriteria])
+      return false
+  }
+  return true
+}
+
+export const makeCompareFunction = (criteria, increasing) => {
+  return function (item1, item2) {
+    let negate = -1
+    if (increasing) {
+      negate = 1
+    }
+    let value1 = item1[criteria]
+    let value2 = item2[criteria]
+    if (value1 < value2) {
+      return -1 * negate
+    } else if (value1 === value2) {
+      return 0
+    } else {
+      return 1 * negate
+    }
+  }
+}

@@ -30,6 +30,7 @@ h1 {
 .app-container {
   margin-left: 280px;
   margin-top: 35px;
+  margin-bottom: 60px;
   margin-right: 50px;
   border-radius: 20px;
   padding: 30px 40px 30px 40px;
@@ -37,12 +38,33 @@ h1 {
   border-color: var(--border);
   color: white;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 15px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 /* Small screens */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .menu-container {
-    margin-left: 10px;
+    margin-left: 50px;
   }
   .app-container {
-    margin-left: 10px;
+    margin-left: 50px;
   }
 }

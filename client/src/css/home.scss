@@ -27,8 +27,7 @@
       border: none;
       margin-right: 10px;
     }
-
-    button:first-child {
+    .active {
       background-color: var(--main-color);
     }
   }
@@ -40,32 +39,56 @@
     color: white;
     font-weight: normal;
     font-size: 13px;
-    div {
+
+    button {
       height: 40px;
       line-height: 40px;
+      background: none;
+      color: white;
+      text-align: left;
+      border: none;
+      margin: 6px;
+      border-radius: 10px;
+      padding: 5px !important;
+      padding-left: 10px !important;
     }
-    div:nth-child(4) {
+    button:nth-child(4) {
       line-height: 20px;
+    }
+    button:hover {
+      background-color: var(--bg-primary);
+    }
+
+    div {
+      margin: 6px;
+      padding: 5px !important;
+      padding-left: 10px !important;
     }
   }
   .dao-header,
   .dao-card {
     display: flex;
+    button:nth-child(1),
     div:nth-child(1) {
       width: 25%;
     }
+    button:nth-child(2),
     div:nth-child(2) {
       width: 10%;
     }
+    button:nth-child(3),
     div:nth-child(3) {
       width: 20%;
     }
+    button:nth-child(4),
     div:nth-child(4) {
       width: 13%;
     }
+    button:nth-child(5),
     div:nth-child(5) {
       width: 13%;
     }
+    button:nth-child(6),
     div:nth-child(6) {
       width: 9%;
     }
@@ -75,8 +98,8 @@
     border-radius: 10px;
     text-decoration: none;
     color: white;
-    div {
-      div > div {
+    button {
+      button > button {
         width: 100%;
       }
     }

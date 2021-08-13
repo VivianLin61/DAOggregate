@@ -1,8 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { createRef } from 'react'
+import React from 'react'
 import { Card } from 'react-bootstrap'
 import { numberWithCommas } from '../utils.js'
-import { Link } from 'react-router-dom'
 function Dao(props) {
   const { match, daos } = props
   const id = match.params.daoId
