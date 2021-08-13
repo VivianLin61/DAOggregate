@@ -8,17 +8,17 @@ import { daolist } from '../src/data/daolist.js'
 import Learn from '../src/pages/Learn.js'
 function App() {
   const [daos, setDaos] = useState(daolist)
-
+  const [search, setSearch] = useState('')
   useEffect(() => {
     setDaos(daolist)
   }, [])
 
   return (
-    <Layout>
+    <Layout daos={daos} search={search} setSearch={setSearch}>
       <Route
         exact
         path='/'
-        render={() => <Home daos={daos} setDaos={setDaos} />}
+        render={() => <Home daos={daos} setDaos={setDaos} search={search} />}
       />
       <Route
         exact

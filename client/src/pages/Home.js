@@ -16,6 +16,15 @@ function Home(props) {
     setActiveItem(e.target.outerText)
   }
 
+  const filterNames = ({ full_name }) => {
+    return full_name.toLowerCase().indexOf(props.search.toLowerCase()) !== -1
+  }
+
+  useEffect(() => {
+    const updatedDaos = filterCategories()
+    setDaos(updatedDaos.filter(filterNames))
+  }, [props.search])
+
   useEffect(() => {
     setTotalDAOs(daos ? daos.length : 0)
     setTotalAUM(
@@ -31,14 +40,23 @@ function Home(props) {
     )
   }, [daos])
   useEffect(() => {
-    if (activeItem === 'All') return setDaos(props.daos)
+    filterCategories()
+  }, [activeItem])
+
+  const filterCategories = () => {
+    if (activeItem === 'All') {
+      setDaos(props.daos)
+      return props.daos
+    }
     const updatedDaos = props.daos
       ? props.daos.filter((dao) => {
           return dao.category === activeItem
         })
       : daos
+
     setDaos(updatedDaos)
-  }, [activeItem])
+    return updatedDaos
+  }
   const sortBy = (field) => {
     let oldItemsIds = []
     let itemsToSort = []
