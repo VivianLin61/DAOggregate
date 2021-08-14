@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { Card } from 'react-bootstrap'
 import DaoCard from '../components/DaoCard.js'
+import { TiArrowSortedDown } from 'react-icons/ti'
 import {
   numberWithCommas,
   isInIncreasingOrder,
@@ -9,6 +10,7 @@ import {
 } from '../utils.js'
 function Home(props) {
   const [daos, setDaos] = useState(props.daos)
+  console.log(props.daos)
   const [totalDAOs, setTotalDAOs] = useState(0)
   const [totalAUM, setTotalAUM] = useState(0)
   const [activeItem, setActiveItem] = useState('All')
@@ -137,7 +139,7 @@ function Home(props) {
             sortBy('full_name')
           }}
         >
-          NAME
+          NAME <TiArrowSortedDown />
         </button>
         <button
           className='p-2'
@@ -146,6 +148,7 @@ function Home(props) {
           }}
         >
           CATEGORY
+          <TiArrowSortedDown />
         </button>
         <button
           className='p-2'
@@ -154,6 +157,7 @@ function Home(props) {
           }}
         >
           AUM (USD)
+          <TiArrowSortedDown />
         </button>
         <button
           className='p-2'
@@ -162,6 +166,7 @@ function Home(props) {
           }}
         >
           TWITTER FOLLOWERS
+          <TiArrowSortedDown />
         </button>
         <button
           className='p-2'
@@ -170,6 +175,7 @@ function Home(props) {
           }}
         >
           FOUNDED DATE
+          <TiArrowSortedDown />
         </button>
         <div className='p-2'></div>
       </div>

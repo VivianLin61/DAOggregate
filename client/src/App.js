@@ -32,6 +32,13 @@ function App() {
           <Dao daos={daos} location={location} match={match} />
         )}
       />
+      <Route
+        exact
+        path='/dao/:daoId/edit'
+        render={({ location }) => (
+          <Add location={location} daos={daos} setDaos={setDaos} />
+        )}
+      />
       <Route exact path='/learn' render={() => <Learn />} />
     </Layout>
   )

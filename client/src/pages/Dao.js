@@ -9,13 +9,7 @@ function Dao(props) {
 
   function Link(props) {
     return (
-      <a
-        rel='noreferrer'
-        target='_blank'
-        href={
-          'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter'
-        }
-      >
+      <a rel='noreferrer' target='_blank' href={props.link}>
         <button
           style={{
             color: `${props.color}`,
@@ -61,21 +55,32 @@ function Dao(props) {
             <Card.Body>
               <Card.Title>Links</Card.Title>
               <Card.Text>
-                <Link
-                  background={'rgba(5, 161, 198, 0.1)'}
-                  color={'#1DA1F2'}
-                  name={'Twitter'}
-                />
-                <Link
-                  background={'rgba(124, 100, 252, 0.1)'}
-                  color={'#7289DA'}
-                  name={'Discord'}
-                />
-                <Link
-                  background={'rgba(127, 127, 127, 0.1)'}
-                  color={'white'}
-                  name={'Github'}
-                />
+                {dao.social_media && (
+                  <>
+                    {dao.social_media.twitter_handle && (
+                      <Link
+                        background={'rgba(5, 161, 198, 0.1)'}
+                        color={'#1DA1F2'}
+                        name={'Twitter'}
+                      />
+                    )}
+                    {dao.social_media.discord_link && (
+                      <Link
+                        background={'rgba(124, 100, 252, 0.1)'}
+                        color={'#7289DA'}
+                        name={'Discord'}
+                        link={dao.social_media.discord_link}
+                      />
+                    )}
+                    {dao.social_media.github_organization_handle && (
+                      <Link
+                        background={'rgba(127, 127, 127, 0.1)'}
+                        color={'white'}
+                        name={'Github'}
+                      />
+                    )}
+                  </>
+                )}
               </Card.Text>
             </Card.Body>
           </Card>
@@ -102,7 +107,9 @@ function Dao(props) {
             </div>
             <div className='token'>
               <div className='d-flex p-2 align-items-center'>
-                {dao.governance_token_name ? dao.governance_token_name : 'N/A'}
+                {dao.governance_token_symbol
+                  ? dao.governance_token_symbol
+                  : 'N/A'}
               </div>
               <div className='d-flex p-2 align-items-center'>
                 {dao.full_name ? dao.full_name : 'N/A'}

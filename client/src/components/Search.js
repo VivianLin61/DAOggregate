@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useRef, useEffect } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { Link, useLocation } from 'react-router-dom'
@@ -5,7 +6,6 @@ import DaoSearchResult from '../components/DaoSearchResult.js'
 function Search(props) {
   const { daos, search, setSearch } = props
   const location = useLocation()
-  // const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [show, setShow] = useState(false)
   const node = useRef()
@@ -61,13 +61,18 @@ function Search(props) {
           placeholder='Search Dao'
           onChange={(e) => setSearch(e.target.value)}
         />
-        <div className='menu'>
-          <Link to={'/add'}>
-            <Button variant='primary'>
-              <span style={{ fontSize: '20px' }}>+</span> Add DAO
-            </Button>
-          </Link>
-        </div>
+        <>
+          {location.pathname.indexOf('/dao/') !== -1 &&
+            location.pathname.indexOf('/edit') === -1 && (
+              <div className='menu'>
+                <Link to={`${location.pathname}/edit`}>
+                  <Button variant='primary'>
+                    <span style={{ fontSize: '20px' }}>+</span> Edit DAO
+                  </Button>
+                </Link>
+              </div>
+            )}{' '}
+        </>
       </div>
       <>
         {location.pathname !== '/' && (
