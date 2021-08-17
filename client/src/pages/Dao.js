@@ -2,9 +2,8 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 function Dao(props) {
-  const { match, daos } = props
-  const id = match.params.daoId
-  const dao = daos ? daos.filter((d) => d.id === id)[0] : {}
+  const { location } = props
+  const dao = location.state.dao
 
   function Link(props) {
     return (
@@ -30,9 +29,13 @@ function Dao(props) {
           onError={(e) => {
             e.target.onerror = null
             e.target.src =
-              'https://s3-ca-central-1.amazonaws.com/cdn.hedgetrade.com/wp-content/uploads/2019/03/29033151/The-dao-logo.png'
+              'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/A_sample_of_the_transparent_rectangle.svg/2560px-A_sample_of_the_transparent_rectangle.svg.png'
           }}
-          src={dao.img ? dao.img : ''}
+          src={
+            dao
+              ? dao.img
+              : 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/A_sample_of_the_transparent_rectangle.svg/2560px-A_sample_of_the_transparent_rectangle.svg.png'
+          }
           style={{ height: '100px', width: '100px', borderRadius: '15px' }}
         />
         <div style={{ width: '100%' }} className='ml-3'>

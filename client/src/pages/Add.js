@@ -24,7 +24,7 @@ function Add({ daos, setDaos }) {
       governance_token_symbol,
       dao_structure,
       voting_process,
-      TVL,
+      tvl,
       tech_stack,
       notes,
       blockchain,
@@ -47,7 +47,7 @@ function Add({ daos, setDaos }) {
       governance_token_symbol,
       dao_structure,
       voting_process,
-      TVL,
+      tvl,
       tech_stack,
       notes,
       blockchain,
@@ -77,7 +77,7 @@ function Add({ daos, setDaos }) {
       governance_token_symbol,
       dao_structure,
       voting_process,
-      TVL,
+      tvl,
       tech_stack,
       notes,
       blockchain,
@@ -102,7 +102,7 @@ function Add({ daos, setDaos }) {
         governance_token_symbol,
         dao_structure,
         voting_process,
-        TVL,
+        tvl,
         tech_stack,
         notes,
         blockchain,
@@ -132,7 +132,7 @@ function Add({ daos, setDaos }) {
       dao && dao.governance_token_symbol ? dao.governance_token_symbol : '',
     dao_structure: dao && dao.dao_structure ? dao.dao_structure : '',
     voting_process: dao && dao.voting_process ? dao.voting_process : '',
-    TVL: dao && dao.TVL ? dao.TVL : 0,
+    tvl: dao && dao.tvl ? dao.tvl : '',
     tech_stack: dao && dao.tech_stack ? dao.tech_stack : '',
     notes: dao && dao.notes ? dao.notes : '',
     blockchain: dao && dao.blockchain ? dao.blockchain : '',
@@ -154,7 +154,10 @@ function Add({ daos, setDaos }) {
       dao && dao.social_media && dao.social_media.linkedin_company_name
         ? dao.social_media.linkedin_company_name
         : '',
-    discord_link: dao && dao.discord_link ? dao.discord_link : '',
+    discord_link:
+      dao && dao.social_media && dao.social_media.discord_link
+        ? dao.social_media.discord_link
+        : '',
   })
 
   return (
@@ -189,11 +192,11 @@ function Add({ daos, setDaos }) {
                 onChange={onChange}
               ></Form.Control>
             </Form.Group>
-            <Form.Group className='date-created'>
-              <Form.Label>Date Created</Form.Label>
+            <Form.Group className='governance-token-symbol'>
+              <Form.Label>Token Symbol</Form.Label>
               <Form.Control
-                name='date_created'
-                value={values.date_created}
+                name='governance_token_symbol'
+                value={values.governance_token_symbol}
                 onChange={onChange}
               ></Form.Control>
             </Form.Group>

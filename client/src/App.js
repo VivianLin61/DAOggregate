@@ -29,7 +29,7 @@ function App() {
         exact
         path='/dao/:daoId'
         render={({ match, location }) => (
-          <Dao daos={daos} location={location} match={match} />
+          <Dao location={location} match={match} />
         )}
       />
       <Route

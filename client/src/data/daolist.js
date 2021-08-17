@@ -9,9 +9,10 @@ export const daolist = [
     date_founded: 'April 2018',
     governance_token_name: 'Uniswap',
     social_media: {
-      twitter_handle: 'uniswap',
+      twitter_handle: '',
       discord_link: 'https://discord.com/invite/FCfyBSbCU5',
       github_organization_handle: 'Uniswap',
+      telegram_link: '',
     },
     governance_token_symbol: 'UNI',
     logo_link: 'https://uniswap.org/',
