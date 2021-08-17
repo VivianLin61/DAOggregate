@@ -50,3 +50,34 @@ export const makeCompareFunction = (criteria, increasing) => {
     }
   }
 }
+
+export const sort = (field, daos) => {
+  let oldItemsIds = []
+  let itemsToSort = []
+
+  for (let i = 0; i < daos.length; i++) {
+    let item = daos[i]
+    oldItemsIds.push(item.id)
+    itemsToSort.push(item)
+  }
+
+  let sortIncreasing = true
+
+  // IS IT ALREADY SORTED ACCORDING TO THE SELECTED
+  // CRITERIA IN INCREASING ORDER?
+  if (isInIncreasingOrder(itemsToSort, field)) {
+    sortIncreasing = false
+  }
+
+  let compareFunction = makeCompareFunction(field, sortIncreasing)
+  itemsToSort = itemsToSort.sort(compareFunction)
+
+  // NOW GET THE SORTED ORDER FOR IDS
+  let newItems = []
+  for (let i = 0; i < itemsToSort.length; i++) {
+    let item = itemsToSort[i]
+    newItems.push(item)
+  }
+
+  return newItems
+}

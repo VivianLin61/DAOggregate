@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 export default function DaoSearchResult({ dao, setShow, setSearch }) {
   return (
     <Link
-      className='d-flex m-2 align-items-center search-item'
-      style={{ cursor: 'pointer' }}
+      className='d-flex p-2 align-items-center search-item'
+      style={{ cursor: 'pointer', borderRadius: '10px' }}
       to={`/dao/${dao.id}`}
       onClick={() => {
         setShow(false)

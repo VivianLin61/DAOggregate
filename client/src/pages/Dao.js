@@ -55,6 +55,14 @@ function Dao(props) {
             <Card.Body>
               <Card.Title>Links</Card.Title>
               <Card.Text>
+                {dao.logo_link && (
+                  <Link
+                    background={'rgba(124, 100, 252, 0.1)'}
+                    color={'var(--main-color)'}
+                    name={'Website'}
+                    link={dao.logo_link}
+                  />
+                )}
                 {dao.social_media && (
                   <>
                     {dao.social_media.twitter_handle && (
@@ -62,6 +70,7 @@ function Dao(props) {
                         background={'rgba(5, 161, 198, 0.1)'}
                         color={'#1DA1F2'}
                         name={'Twitter'}
+                        link={`https://twitter.com/${dao.social_media.twitter_handle}/`}
                       />
                     )}
                     {dao.social_media.discord_link && (
@@ -77,6 +86,7 @@ function Dao(props) {
                         background={'rgba(127, 127, 127, 0.1)'}
                         color={'white'}
                         name={'Github'}
+                        link={`https://github.com/${dao.social_media.github_organization_handle}/`}
                       />
                     )}
                   </>
@@ -87,8 +97,8 @@ function Dao(props) {
           <Card className='TVL'>
             <Card.Body>
               <Card.Title>Total Value Locked (TVL)</Card.Title>
-              <Card.Text>
-                {dao.tvl ? numberWithCommas(dao.tvl) : 'N/A'}
+              <Card.Text style={{ fontSize: '20px' }}>
+                {dao.tvl ? `$${dao.tvl} ${dao.tvl > 1 ? 'b' : 'm'}` : 'N/A'}
               </Card.Text>
             </Card.Body>
           </Card>

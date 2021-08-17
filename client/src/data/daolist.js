@@ -8,10 +8,17 @@ export const daolist = [
     twl: 562397,
     date_founded: 'April 2018',
     governance_token_name: 'Uniswap',
+    social_media: {
+      twitter_handle: 'uniswap',
+      discord_link: 'https://discord.com/invite/FCfyBSbCU5',
+      github_organization_handle: 'Uniswap',
+    },
     governance_token_symbol: 'UNI',
+    logo_link: 'https://uniswap.org/',
     description:
       'Uniswap empowers developers, liquidity providers and traders to participate in a financial marketplace that is open and accessible to all. We are committed to open source software and building on the decentralized web.',
     blockchain: 'Ethereum',
+    tvl: 4.93,
   },
   {
     id: '2',
@@ -20,7 +27,18 @@ export const daolist = [
     category: 'Protocol',
     aum: 1554407179,
     twl: 156535,
+    tvl: 11.15,
     date_founded: 'May 2011',
+    governance_token_name: 'Compound',
+    social_media: {
+      twitter_handle: 'compoundfinance',
+      discord_link: 'https://discord.com/invite/fq6JSPkpJn',
+      github_organization_handle: 'compound-finance',
+    },
+    governance_token_symbol: 'COMP',
+    logo_link: 'https://compound.finance',
+    description:
+      'Compound is an algorithmic, autonomous interest rate protocol built for developers, to unlock a universe of open financial applications.',
   },
   {
     id: '3',
@@ -30,6 +48,17 @@ export const daolist = [
     aum: 766115566,
     twl: 248054,
     date_founded: 'May 2017',
+    tvl: 13.41,
+    governance_token_name: 'AAVE',
+    social_media: {
+      twitter_handle: 'AaveAave',
+      discord_link: 'https://discord.com/invite/adPfquZDZc',
+      github_organization_handle: 'aave',
+    },
+    governance_token_symbol: 'AAVE',
+    logo_link: 'https://aave.com',
+    description:
+      'Aave is an Open Source and Non-Custodial protocol to earn interest on deposits and borrow assets',
   },
   {
     id: '4',
@@ -38,7 +67,18 @@ export const daolist = [
     category: 'Protocol',
     aum: 655426161,
     twl: 35724,
+    tvl: 0.74454,
     date_founded: 'August 2020',
+    governance_token_name: 'Badger DAO',
+    social_media: {
+      twitter_handle: 'BadgerDAO',
+      discord_link: 'https://discord.com/invite/xSPFHHS',
+      github_organization_handle: 'Badger-Finance',
+    },
+    governance_token_symbol: 'BADGER',
+    logo_link: 'https://badger.finance/',
+    description:
+      'DAO dedicated to building products and infrastructure to bring Bitcoin to DeFi.',
   },
   {
     id: '5',
@@ -48,6 +88,16 @@ export const daolist = [
     aum: 262401473,
     twl: 110453,
     date_founded: 'September 2020',
+    governance_token_name: 'SushiSwap',
+    social_media: {
+      twitter_handle: 'SushiSwap',
+      github_organization_handle: 'sushiswap',
+    },
+    governance_token_symbol: 'SUSHI',
+    logo_link: 'https://sushi.com',
+    description:
+      'A fully decentralized protocol for automated liquidity provision on Ethereum.',
+    tvl: 4.52,
   },
   {
     id: '6',
@@ -56,6 +106,7 @@ export const daolist = [
     category: 'Protocol',
     aum: 222927865,
     twl: 164381,
+    tvl: 8.78,
     date_founded: 'April 2015',
   },
   {
@@ -65,6 +116,7 @@ export const daolist = [
     category: 'Protocol',
     aum: 216227448,
     twl: 138611,
+    tvl: 11.34,
     date_founded: 'January 2020',
   },
   {
@@ -72,6 +124,8 @@ export const daolist = [
     img: 'https://daolist.fyi/nextimg/https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F1154798570047967233%2FZINt8NSB_normal.jpg',
     full_name: 'Tornado',
     category: 'Protocol',
+    description: 'Non-custodial anonymous transactions on Ethereum.',
+    tvl: 0.69204,
     aum: 182427865,
     twl: 21236,
     date_founded: 'July 2019',
@@ -82,8 +136,12 @@ export const daolist = [
     full_name: 'Balancer',
     category: 'Protocol',
     aum: 104728397,
+    description: 'Balancer is a protocol for programmable liquidity.',
+    governance_token_name: 'Balancer',
+    governance_token_symbol: 'BAL',
     twl: 89435,
     date_founded: 'August 2019',
+    tvl: 3.26,
   },
   {
     id: '10',

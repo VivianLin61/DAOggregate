@@ -16,8 +16,9 @@
 
   .categories {
     margin-top: 30px;
-    margin-bottom: 35px;
-
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
     button {
       letter-spacing: 2px;
       border-radius: 9999px;
@@ -31,6 +32,58 @@
     .active {
       background-color: var(--main-color);
     }
+
+    .filter-btn {
+      margin-top: 0px;
+      padding: 10px 10px 10px 10px;
+      letter-spacing: 1px;
+      background-color: var(--bg-secondary);
+      border: 2px solid var(--text-muted) !important;
+      border-radius: 10px;
+      svg {
+        display: inline-block;
+        margin-top: -3px;
+        margin-right: 4px;
+        vertical-align: middle;
+      }
+    }
+
+    .filter-btn:hover {
+      background-color: var(--text-muted) !important;
+    }
+  }
+
+  .Select {
+    &.is-focused {
+      box-shadow: 0px 0px 10px #ffeb3b !important;
+    }
+  }
+  .filter-options {
+    height: 100px;
+    display: flex;
+    div {
+      flex-grow: 1;
+      h3 {
+        font-size: 18px;
+      }
+    }
+
+    .date-founded,
+    .total-value-locked,
+    .blockchain {
+      padding-right: 20px;
+      div {
+        div {
+          div:first-child {
+            flex-grow: 10;
+          }
+        }
+      }
+    }
+  }
+
+  .hide-filter-options {
+    display: none;
   }
   hr {
     margin: 0px;

@@ -244,6 +244,7 @@ function Add({ daos, setDaos }) {
 
             <Form.Group className='blockchain'>
               <Form.Label>Blockchain</Form.Label>
+
               <Form.Control
                 name='blockchain'
                 value={values.blockchain}
