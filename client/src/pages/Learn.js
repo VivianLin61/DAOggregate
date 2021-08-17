@@ -1,10 +1,9 @@
 import React from 'react'
 import { Card, CardGroup } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
 import { articles } from '../data/articles.js'
 import { GrFormNextLink } from 'react-icons/gr'
 import { motion } from 'framer-motion'
-function Learn(props) {
+function Learn() {
   function Article({ name, description, link, img }) {
     return (
       <Card>
