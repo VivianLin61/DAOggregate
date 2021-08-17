@@ -1,7 +1,7 @@
 import React from 'react'
 import Select from 'react-select'
 
-export default function SelectFilters({ options, callback }) {
+export default function SelectFilters({ options, callback, initial }) {
   const customStyles = {
     option: (styles, { isSelected }) => {
       return {
@@ -18,7 +18,7 @@ export default function SelectFilters({ options, callback }) {
   }
   return (
     <Select
-      defaultValue={options[0]}
+      defaultValue={initial}
       options={options}
       isSearchable={false}
       styles={customStyles}
@@ -31,7 +31,7 @@ export default function SelectFilters({ options, callback }) {
         },
       })}
       onChange={(e) => {
-        callback(e.value)
+        callback(e)
       }}
     />
   )

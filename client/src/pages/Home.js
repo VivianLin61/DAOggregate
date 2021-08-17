@@ -5,6 +5,7 @@ import { BiFilter } from 'react-icons/bi'
 import DaoCard from '../components/DaoCard.js'
 import { TiArrowSortedDown } from 'react-icons/ti'
 import { numberWithCommas, sort } from '../utils.js'
+import { motion, AnimatePresence } from 'framer-motion'
 import {
   categories,
   dateFounded,
@@ -17,9 +18,18 @@ function Home(props) {
   const [totalDAOs, setTotalDAOs] = useState(0)
   const [totalAUM, setTotalAUM] = useState(0)
   const [activeItem, setActiveItem] = useState('All')
-  const [filteredDate, setFilterDate] = useState('all')
-  const [filteredBlockchain, setFilterBlockchain] = useState('all')
-  const [fliterdTVL, setFilterTVL] = useState({ low: -1, high: -1 })
+  const [filteredDate, setFilterDate] = useState({
+    value: 'all',
+    label: 'All Dates',
+  })
+  const [filteredBlockchain, setFilterBlockchain] = useState({
+    value: 'all',
+    label: 'All',
+  })
+  const [fliterdTVL, setFilterTVL] = useState({
+    value: { low: -1, high: -1 },
+    label: 'All ',
+  })
   const [showFilters, setShowFilters] = useState(false)
   const handleItemClick = (e) => {
     setActiveItem(e.target.outerText)
@@ -54,13 +64,13 @@ function Home(props) {
   }
 
   const filterDateFounded = (filterdDaos) => {
-    if (filteredDate === 'all') {
+    if (filteredDate.value === 'all') {
       setDaos(filterdDaos)
       return filterdDaos
     }
     const updatedDaos = filterdDaos
       ? filterdDaos.filter((dao) => {
-          return dao.date_founded.indexOf(filteredDate) !== -1
+          return dao.date_founded.indexOf(filteredDate.value) !== -1
         })
       : daos
 
@@ -69,13 +79,13 @@ function Home(props) {
   }
 
   const filterBlockchain = (filterdDaos) => {
-    if (filteredBlockchain === 'all') {
+    if (filteredBlockchain.value === 'all') {
       setDaos(filterdDaos)
       return filterdDaos
     }
     const updatedDaos = filterdDaos
       ? filterdDaos.filter((dao) => {
-          return dao.blockchain && dao.blockchain === filteredBlockchain
+          return dao.blockchain && dao.blockchain === filteredBlockchain.value
         })
       : daos
 
@@ -84,15 +94,16 @@ function Home(props) {
   }
 
   const filterTVL = (filterdDaos) => {
-    if (fliterdTVL.low === -1) {
-      console.log(filterdDaos)
+    if (fliterdTVL.value.low === -1) {
       setDaos(filterdDaos)
       return filterdDaos
     }
     const updatedDaos = filterdDaos
       ? filterdDaos.filter((dao) => {
           return (
-            dao.tvl && dao.tvl >= fliterdTVL.low && dao.tvl < fliterdTVL.high
+            dao.tvl &&
+            dao.tvl >= fliterdTVL.value.low &&
+            dao.tvl < fliterdTVL.value.high
           )
         })
       : daos
@@ -170,13 +181,15 @@ function Home(props) {
       <div className='categories'>
         <div>
           {categories.map((category, index) => (
-            <button
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
               key={index}
               onClick={handleItemClick}
               className={activeItem === category ? 'active' : ''}
             >
               {category}
-            </button>
+            </motion.button>
           ))}
         </div>
 
@@ -198,35 +211,47 @@ function Home(props) {
           Filters
         </button>
       </div>
-      <div className={showFilters ? 'filter-options' : ' hide-filter-options'}>
-        <div className='date-founded'>
-          <h3>Date Founded</h3>
-          <SelectFilters
-            callback={(v) => {
-              setFilterDate(v)
-            }}
-            options={dateFounded}
-          />
-        </div>
-        <div className='blockchain'>
-          <h3>Blockchain</h3>
-          <SelectFilters
-            callback={(v) => {
-              setFilterBlockchain(v)
-            }}
-            options={blockchain}
-          />
-        </div>
-        <div className='total-value-locked'>
-          <h3>TVL</h3>
-          <SelectFilters
-            options={total_value_locked}
-            callback={(v) => {
-              setFilterTVL(v)
-            }}
-          />
-        </div>
-      </div>
+      <AnimatePresence>
+        {showFilters && (
+          <motion.div
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            className={'filter-options'}
+          >
+            <div className='date-founded'>
+              <h3>Date Founded</h3>
+              <SelectFilters
+                initial={filteredDate}
+                callback={(e) => {
+                  setFilterDate(e)
+                }}
+                options={dateFounded}
+              />
+            </div>
+            <div className='blockchain'>
+              <h3>Blockchain</h3>
+              <SelectFilters
+                initial={filteredBlockchain}
+                callback={(e) => {
+                  setFilterBlockchain(e)
+                }}
+                options={blockchain}
+              />
+            </div>
+            <div className='total-value-locked'>
+              <h3>TVL</h3>
+              <SelectFilters
+                initial={fliterdTVL}
+                options={total_value_locked}
+                callback={(e) => {
+                  setFilterTVL(e)
+                }}
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <hr />
       <div className='dao-header'>
         <DaoHeader sortField='full_name' field='NAME' />
@@ -241,7 +266,7 @@ function Home(props) {
         {daos && daos.length > 0 ? (
           daos.map((dao) => <DaoCard key={dao.id} dao={dao} />)
         ) : (
-          <div>No results found</div>
+          <div className='no-results'>No results found</div>
         )}
       </div>
     </div>

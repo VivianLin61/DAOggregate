@@ -166,4 +166,11 @@
   .dao-card:hover {
     background-color: var(--bg-primary);
   }
+
+  .no-results {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+  }
 }

@@ -17,7 +17,8 @@ function Sidebar() {
   return (
     <nav className='navbar'>
       <ul className='navbar-nav'>
-        <li className='nav-item'><script></script>
+        <li className='nav-item'>
+          <script></script>
           <Link className='logo' to={'/'}>
             <svg
               viewBox='0 0 807 254'
@@ -47,7 +48,7 @@ function Sidebar() {
             </svg>
           </Link>
         </li>
-        <li className='nav-item'>
+        <li className='nav-item' style={{ pointerEvents: 'none' }}>
           <div className='nav-link'></div>
         </li>
         <SidebarItem icon={AiFillHome} title={'Home'} link={'/'} />

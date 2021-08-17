@@ -49,6 +49,7 @@ function DaoCard({ dao }) {
             style={{ justifyContent: 'space-between' }}
           >
             <BiGlobe />
+
             <FaTwitter />
           </div>
         </Link>
