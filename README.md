@@ -29,7 +29,7 @@ Visit the site here: https://dao-ggregate.vercel.app
 1. Clone the project
 
 ```
-git clone https://github.com/VivianLin61/DAOggregate-React-Front-End-Skills-Test.git
+git clone https://github.com/VivianLin61/DAOggregate.git
 ```
 
 2. `cd` into client directory and install dependencies
