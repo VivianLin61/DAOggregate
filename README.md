@@ -14,7 +14,7 @@ Visit the site here: https://dao-ggregate.vercel.app
 - Users can filter the leaderboard based on data founded, category, total value locked (tvl) and blockchain
 - Users can sort the daos based on name, category, date founded and twitter followers
 - Users can search for DAOs using the search bar
-- 
+
 ## Project Demo
 
 ![XzFakRwq32](https://user-images.githubusercontent.com/33815743/129777209-05807ab8-13de-48bb-a5a4-a030cd312994.gif)
